@@ -2,6 +2,7 @@ from typing import Dict
 import sympy as sp
 from math import floor
 
+
 def nghiem(nghiemm):
     temp = str(nghiemm).split("{(")[1].split(")}")[0].split(", ")
     if temp[0] == "0":
@@ -44,10 +45,8 @@ def nghiem(nghiemm):
                 }
 
 
-def tim_mien_nghiem(phuong_trinh: Dict):
+def tim_x_va_y(phuong_trinh):
     x, y = sp.symbols("x y")
-
-    results = []
     x_max = 0
     y_max = 0
     for i in range(len(phuong_trinh["phuong_trinh"])):
@@ -64,6 +63,19 @@ def tim_mien_nghiem(phuong_trinh: Dict):
 
         x_max = max(x_max, floor(x_res))
         y_max = max(y_max, floor(y_res))
+    return {
+        "x_max": x_max,
+        "y_max": y_max,
+    }
+
+
+def tim_mien_nghiem(phuong_trinh: Dict):
+    results = []
+    maxx = tim_x_va_y(phuong_trinh)
+
+    x_max = maxx["x_max"]
+    y_max = maxx["y_max"]
+
     for i in range(x_max + 1):
         for j in range(y_max + 1):
             results.append({"x": i, "y": j})

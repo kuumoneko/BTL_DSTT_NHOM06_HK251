@@ -50,20 +50,20 @@ def nhap_du_lieu():
         },
     }
     # return {
-    #     "so_dui_ga": 200,
+    #     "so_dui_ga": 0,
     #     "so_tui_khoai_tay": 100,
     #     "so_ly_nuoc_chanh": 165,
     #     "so_ly_coca": 0,
     #     "thuc_don_1": {
     #         "gia": 30,
-    #         "dui_ga": 30,
+    #         "dui_ga": 0,
     #         "tui_khoai_tay": 1,
     #         "ly_nuoc_chanh": 3,
     #         "ly_coca": 0,
     #     },
     #     "thuc_don_2": {
     #         "gia": 50,
-    #         "dui_ga": 4,
+    #         "dui_ga": 0,
     #         "tui_khoai_tay": 2,
     #         "ly_nuoc_chanh": 3,
     #         "ly_coca": 0,
