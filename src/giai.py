@@ -69,6 +69,7 @@ import numpy as np
 from scipy.optimize import linprog
 from src.nhieu_an.solve import solve
 
+
 # kiểm tra nghiệm có hợp lệ hay không
 def check_an(solution):
     for i in range(len(solution)):
@@ -98,6 +99,7 @@ def bai_nhieu_an(dulieu):
     )
     if result.success:
         nghiem = result.x
+        # Nghiệm lẻ thì tìm lại nghiệm nguyên khác
         if not check_an(nghiem):
             result = solve(
                 matran["ma_tran"],
@@ -120,6 +122,7 @@ def bai_nhieu_an(dulieu):
                     f"{result["bien_toi_uu"][i]} phần combo thứ {i +1}",
                     end=", " if i + 1 < len(result["bien_toi_uu"]) else "",
                 )
+        # nếu là nghiệm nguyên thì in ra kết quả luôn
         else:
             max_profit = -result.fun
             print(f"Số tiên lớn nhất có thể nhận được là: {max_profit} nghìn đồng")
