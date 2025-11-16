@@ -1,3 +1,4 @@
+# kiểm tra tính hợp lệ của nghiệm
 def kiem_tra_nghiem(nghiem):
     results = []
     for i in range(len(nghiem)):

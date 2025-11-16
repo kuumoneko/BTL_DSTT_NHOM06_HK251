@@ -1,3 +1,4 @@
+# Lập ma trận từ dữ liệu của bài toán để giải
 def lap_ma_tran(du_lieu):
     ma_tran = [[] for _ in range(4)]
     phuong_trinh_can_tinh = []

@@ -1,3 +1,4 @@
+# kiểm tra nghiệm có thõa mãn các điều kiện của bài toán hay không
 def kiem_tra(phuongtrinh, dieukien, bien):
     if len(phuongtrinh) != len(dieukien) or len(phuongtrinh[0]) != len(bien):
         return False
@@ -11,6 +12,7 @@ def kiem_tra(phuongtrinh, dieukien, bien):
     return True
 
 
+# tính hàm doanh thu
 def tinh(cantinh, bien):
     sum = 0
     for i in range(len(cantinh)):
@@ -18,6 +20,7 @@ def tinh(cantinh, bien):
     return sum
 
 
+# tìm các nghiệm thuộc miền nghiệm với điều kiện nghiệm nguyên, làm cho hàm doanh thu cao nhất
 def dequy(
     cap, bien_hien_tai, phuong_trinh, dieu_kien, he_so_ham_muc_tieu, pham_vi_bien
 ):

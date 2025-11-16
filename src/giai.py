@@ -6,19 +6,22 @@ from src.hai_an.ve_do_thi import ve_do_thi
 
 
 def bai_hai_an(dulieu):
-
+    # Lập phương trình từ dữ liệu bài toán
     phuong_trinh = tim_phuong_trinh(dulieu)
 
     # giải phương trình
     nghiemm = giai_phuong_trinh(phuong_trinh["phuong_trinh"])
+    # kiểm tra các nghiệm có thõa mãn yêu cầu bài toán hay không
     kiem_tra = kiem_tra_nghiem(nghiemm)
 
+    # tìm cặp (x , y) đem lại doanh thu cao nhất
     result = 0
     res = {"x": 0, "y": 0}
     if kiem_tra == "vo nghiem":
         print("Không có nghiệm hợp lệ")
         exit(0)
 
+    # tìm lại nghiệm nguyên khi các nghiệm tìm được là các nghiệm lẻ (có số sau dấu thập phân)
     if kiem_tra == "co nghiem le":
         kiem_tra = tim_mien_nghiem(phuong_trinh["phuong_trinh"])
 
@@ -41,6 +44,7 @@ def bai_hai_an(dulieu):
                 x_val * dulieu["thuc_don"][0]["gia"]
                 + y_val * dulieu["thuc_don"][1]["gia"]
             )
+
             if tong_tien > result:
                 result = tong_tien
                 res["x"] = x_val
@@ -65,7 +69,7 @@ import numpy as np
 from scipy.optimize import linprog
 from src.nhieu_an.solve import solve
 
-
+# kiểm tra nghiệm có hợp lệ hay không
 def check_an(solution):
     for i in range(len(solution)):
         if solution[i] < 0:
@@ -76,6 +80,7 @@ def check_an(solution):
 
 
 def bai_nhieu_an(dulieu):
+    # Lập ma trận từ dữ liệu bài toán
     matran = lap_ma_tran(dulieu)
     bien = [(0, None) for _ in range(len(dulieu["thuc_don"]))]
 
@@ -83,8 +88,7 @@ def bai_nhieu_an(dulieu):
     ve_trai = np.array(matran["ma_tran"])
     ve_phai = np.array(matran["gioi_han"])
 
-    # print(matran)
-
+    # giải hệ phương trình với quy tắc làm cho hàm đích có giá trị cao nhất
     result = linprog(
         c=phuong_trinh_can_tinh,
         A_ub=ve_trai,
@@ -128,4 +132,4 @@ def bai_nhieu_an(dulieu):
                     end=", " if i + 1 < len(nghiem) else "",
                 )
     else:
-        print("stink")
+        print("Không có nghiệm hợp lệ")

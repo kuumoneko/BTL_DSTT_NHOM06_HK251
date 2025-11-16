@@ -1,16 +1,11 @@
-from typing import Dict
 import sympy as sp
 
-
-def tim_phuong_trinh(data: Dict):
-    # khởi tạo biến x và y đại diện cho số phần combo 1 và combo 2 bán được
-    x, y = sp.symbols("x y")
-    phuong_trinh_can_tinh = (
-        data["thuc_don"][0]["gia"] * x + data["thuc_don"][1]["gia"] * y
-    )
+def tim_phuong_trinh(data):
+    x, y = sp.symbols("x y")  # tạo biến x và y
+    phuong_trinh_can_tinh = data["thuc_don"][0]["gia"] * x + data["thuc_don"][1]["gia"] * y # phương trình cần để tính toán doanh thu
     return {
         "phuong_trinh": {
-            "phuong_trinh": [
+            "phuong_trinh": [ # các bất phương trình điều kiện (vế trái <= vế phải)
                 {
                     "ve_trai": data["thuc_don"][0]["dui_ga"] * x
                     + data["thuc_don"][1]["dui_ga"] * y,
@@ -32,7 +27,7 @@ def tim_phuong_trinh(data: Dict):
                     "ve_phai": data["so_ly_coca"],
                 },
             ],
-            "dieu_kien": [
+            "dieu_kien": [ # điều kiện tiên quyết (x >= 0 và y >= 0)
                 {"ve_trai": x, "ve_phai": 0},
                 {"ve_trai": y, "ve_phai": 0},
             ],

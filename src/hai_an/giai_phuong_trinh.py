@@ -2,8 +2,9 @@ from typing import Dict
 import sympy as sp
 
 def giai_phuong_trinh(phuong_trinh: Dict):
-    x, y = sp.symbols("x y")
+    x, y = sp.symbols("x y") # tạo biến x và y
     results = []
+    # Tìm giao điểm của các phương trình với nhau
     for i in range(len(phuong_trinh["phuong_trinh"])):
         for j in range(len(phuong_trinh["phuong_trinh"])):
             pt1 = sp.Eq(

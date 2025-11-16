@@ -14,12 +14,14 @@ Số tiền lớn nhất mà câu lạc bộ có thể nhận được sau khi b
 def nhap_du_lieu(bo_test=4):
     if bo_test == 7:
         print("-" * 30 + " Kho " + "-" * 30)
+        # nhập các điều kiện
         so_dui_ga = int(input("Số lượng đùi gà rán có thể làm được: "))
         so_tui_khoai_tay = int(input("Số lượng túi khoai tây có thể làm được: "))
         so_ly_nuoc_chanh = int(input("Số lượng ly nước chanh có thể làm được: "))
         so_ly_coca = int(input("Số lượng ly coca có thể làm được: "))
         n = int(input("Số lượng combo: "))
 
+        # nhập các thông tin của các combo
         combo = []
         for i in range(n):
             print("-" * 30 + f" Combo {i+1} " + "-" * 30)
