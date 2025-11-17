@@ -1,6 +1,7 @@
 # main
 from src.nhap_du_lieu import nhap_du_lieu
-from src.giai import bai_hai_an, bai_nhieu_an
+from src.hai_an.giai import bai_hai_an
+from src.nhieu_an.giai import bai_nhieu_an
 
 # các bộ test mẫu
 # 1: 2 ẩn, nghiệm lẻ

@@ -2,6 +2,13 @@
 
 ## Đề bài
 
-```txt
-Đề gây quỹ từ thiện, câu lạc bộ thiện nguyện của một trường THPT tổ chức hoạt động bản hàng với hai mặt hàng là nước chanh và khoai chiên. Câu lạc bộ thiết kế hai thực đơn. Thực đơn 1 có giá 30 nghìn đồng, bao gồm a cốc nước chanh và b túi khoai chiên. Thực đơn 2 có giá 50 nghìn đồng, bao gồm ba cốc nước chanh và hai túi khoai chiên. Biết rằng câu lạc bộ chỉ làm được không quá 165 cốc nước chanh và 100 túi khoai chiên. Số tiền lớn nhất mà câu lạc bộ có thể nhận được sau khi bản hết hàng bằng bao nhiêu nghìn đồng?
+```shell
+Để gây quỹ từ thiện, câu lạc bộ thiện nguyện của một trường THPT tổ chức hoạt động bán hàng với bốn mặt hàng là đùi gà rán, khoai tây chiên, nước chanh, nước coca.
+Câu lạc bộ thiết kế hai thực đơn.
+Thực đơn 1 có giá X nghìn đồng, bao gồm a cốc nước chanh và b túi khoai tây chiên, c ly nước chanh, d ly coca.
+Thực đơn 2 có giá Y nghìn đồng, bao gồm e đùi gà rán, f túi khoai tây chiên, g ly nước chanh, h ly coca.
+
+Biết rằng câu lạc bộ chỉ làm được không quá Q đùi gà rán, W túi khoai tây chiên, E ly nước chanh, R ly coca.
+
+Số tiền lớn nhất mà câu lạc bộ có thể nhận được sau khi bán hết hàng bằng bao nhiêu nghìn đồng?
 ```

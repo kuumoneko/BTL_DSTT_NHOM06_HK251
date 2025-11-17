@@ -1,4 +1,3 @@
-from typing import Dict
 import sympy as sp
 from math import floor
 
@@ -68,18 +67,3 @@ def tim_x_va_y(phuong_trinh):
         "x_max": x_max,
         "y_max": y_max,
     }
-
-
-def tim_mien_nghiem(phuong_trinh: Dict):
-    results = []
-    # tìm x MAX và y MAX
-    maxx = tim_x_va_y(phuong_trinh)
-
-    x_max = maxx["x_max"]
-    y_max = maxx["y_max"]
-
-    # tìm tất cả các nghiệm nguyên thuộc miện nghiệm
-    for i in range(x_max + 1):
-        for j in range(y_max + 1):
-            results.append({"x": i, "y": j})
-    return results

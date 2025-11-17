@@ -24,7 +24,7 @@ def tinh(cantinh, bien):
 def dequy(
     cap, bien_hien_tai, phuong_trinh, dieu_kien, he_so_ham_muc_tieu, pham_vi_bien
 ):
-    if cap + 1 == len(pham_vi_bien):
+    if cap  == len(pham_vi_bien):
         # tính hàm doanh thu
         gia_tri_hien_tai = tinh(he_so_ham_muc_tieu, bien_hien_tai)
         return {
@@ -41,7 +41,6 @@ def dequy(
         # kiểm tra nghiệm có thõa mãn các điều kiện của bài toán hay không
         if not kiem_tra(phuong_trinh, dieu_kien, bien_hien_tai):
             continue  # Nếu không hợp lệ, thử giá trị tiếp theo
-
         ket_qua_tu_nhanh_con = dequy(
             cap + 1,
             bien_hien_tai,
@@ -56,15 +55,3 @@ def dequy(
     bien_hien_tai[cap] = 0
     return ket_qua_tot_nhat
 
-
-# sử dụng kỹ thuật đệ quy để tìm nghiệm nguyên thõa mãn các yêu cầu bài toán và làm cho hàm doanh thu lớn nhất
-# với trường hợp tổng quát nhiều ẩn
-def solve(phuongtrinh, dieu_kien, he_so_ham_muc_tieu, pham_vi_bien):
-    return dequy(
-        cap=0,
-        bien_hien_tai=[pham_vi_bien[i][0] for i in range(len(pham_vi_bien))],
-        phuong_trinh=phuongtrinh,
-        dieu_kien=dieu_kien,
-        he_so_ham_muc_tieu=he_so_ham_muc_tieu,
-        pham_vi_bien=pham_vi_bien,
-    )
