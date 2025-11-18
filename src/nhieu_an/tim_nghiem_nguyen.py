@@ -24,7 +24,7 @@ def tinh(cantinh, bien):
 def dequy(
     cap, bien_hien_tai, phuong_trinh, dieu_kien, he_so_ham_muc_tieu, pham_vi_bien
 ):
-    if cap  == len(pham_vi_bien):
+    if cap == len(pham_vi_bien):
         # tính hàm doanh thu
         gia_tri_hien_tai = tinh(he_so_ham_muc_tieu, bien_hien_tai)
         return {
@@ -33,7 +33,6 @@ def dequy(
         }
 
     ket_qua_tot_nhat = {"gia_tri": -1, "bien_toi_uu": []}
-
     start, end = pham_vi_bien[cap]
 
     for gia_tri in range(start, end):
@@ -54,4 +53,3 @@ def dequy(
             ket_qua_tot_nhat = ket_qua_tu_nhanh_con
     bien_hien_tai[cap] = 0
     return ket_qua_tot_nhat
-

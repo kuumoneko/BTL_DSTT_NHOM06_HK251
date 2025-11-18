@@ -55,12 +55,11 @@ def bai_nhieu_an(dulieu):
         nghiem = result.x
         # Nghiệm lẻ thì tìm lại nghiệm nguyên khác
         if not check_an(nghiem):
-            pham_vi_bien = (
-                [
-                    [max(int(nghiem[i]) - 2, 0), int(nghiem[i]) + 2]
-                    for i in range(len(nghiem))
-                ],
-            )
+            pham_vi_bien = [
+                [max(int(nghiem[i]) - 2, 0), int(nghiem[i]) + 2]
+                for i in range(len(nghiem))
+            ]
+            # print(pham_vi_bien)
             result = dequy(
                 cap=0,
                 bien_hien_tai=[pham_vi_bien[i][0] for i in range(len(pham_vi_bien))],
@@ -69,7 +68,7 @@ def bai_nhieu_an(dulieu):
                 he_so_ham_muc_tieu=phuong_trinh_can_tinh,
                 pham_vi_bien=pham_vi_bien,
             )
-            print(result)
+            # print(res//ult)
             print(
                 f"Số tiên lớn nhất có thể nhận được là: {result['gia_tri']} nghìn đồng"
             )

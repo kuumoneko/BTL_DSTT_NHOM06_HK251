@@ -137,7 +137,6 @@ def bai_hai_an(dulieu):
                 x_val * dulieu["thuc_don"][0]["gia"]
                 + y_val * dulieu["thuc_don"][1]["gia"]
             )
-            print(phuong_trinh["phuong_trinh"])
             for pt in phuong_trinh["phuong_trinh"]:
 
                 if pt["ve_trai"] == 0:
