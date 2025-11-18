@@ -137,13 +137,23 @@ def bai_hai_an(dulieu):
                 x_val * dulieu["thuc_don"][0]["gia"]
                 + y_val * dulieu["thuc_don"][1]["gia"]
             )
-
+            print(phuong_trinh["phuong_trinh"])
             for pt in phuong_trinh["phuong_trinh"]:
+
+                if pt["ve_trai"] == 0:
+                    continue
+
                 if (
                     x_val * pt["ve_trai"].args[0].args[0]
-                    + y_val * pt["ve_trai"].args[1].args[0]
-                    > pt["ve_phai"]
-                ):
+                    if str(pt["ve_trai"].args[0]) != "x"
+                    else 1
+                ) + (
+                    y_val * pt["ve_trai"].args[1].args[0]
+                    if str(pt["ve_trai"].args[1]) != "x"
+                    else 1
+                ) > pt[
+                    "ve_phai"
+                ]:
                     tong_tien = 0
                     break
 
