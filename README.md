@@ -12,3 +12,17 @@ Biết rằng câu lạc bộ chỉ làm được không quá Q đùi gà rán, 
 
 Số tiền lớn nhất mà câu lạc bộ có thể nhận được sau khi bán hết hàng bằng bao nhiêu nghìn đồng?
 ```
+
+## Usage
+
+- Install requirements
+
+```shell
+pip install
+```
+
+- Run index.py
+
+```shell
+python -u index.py
+```
