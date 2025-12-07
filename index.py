@@ -10,8 +10,9 @@ from src.nhieu_an.giai import bai_nhieu_an
 # 4: 3 ẩn, nghiệm lẻ
 # 5: 4 ẩn, nghiệm lẻ
 # 6: 4 ẩn, nghiệm chẵn
+# 8: case test trong báo cáo
 # 7: manual
-bo_test = 2
+bo_test = 8
 
 dulieu = nhap_du_lieu(bo_test)
 print("")

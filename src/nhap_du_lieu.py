@@ -226,3 +226,26 @@ def nhap_du_lieu(bo_test=4):
                 },
             ],
         }
+    if bo_test == 8:
+        return {
+            "so_dui_ga": 44,
+            "so_tui_khoai_tay": 40,
+            "so_ly_nuoc_chanh": 60,
+            "so_ly_coca": 52,
+            "thuc_don": [
+                {
+                    "gia": 30,
+                    "dui_ga": 1,
+                    "tui_khoai_tay": 1,
+                    "ly_nuoc_chanh": 1,
+                    "ly_coca": 2,
+                },
+                {
+                    "gia": 50,
+                    "dui_ga": 2,
+                    "tui_khoai_tay": 1,
+                    "ly_nuoc_chanh": 3,
+                    "ly_coca": 1,
+                },
+            ],
+        }
