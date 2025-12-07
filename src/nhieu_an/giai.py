@@ -2,7 +2,6 @@ import numpy as np
 from scipy.optimize import linprog
 from src.nhieu_an.tim_nghiem_nguyen import dequy
 
-
 # kiểm tra nghiệm có hợp lệ hay không
 def check_an(solution):
     for i in range(len(solution)):
@@ -11,7 +10,6 @@ def check_an(solution):
         if solution[i] % 1 != 0:
             return False
     return True
-
 
 def bai_nhieu_an(dulieu):
     # Lập ma trận từ dữ liệu bài toán

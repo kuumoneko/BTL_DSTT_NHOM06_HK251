@@ -7,9 +7,6 @@ def bai_hai_an(dulieu):
     x, y = sp.symbols("x y")  # tạo biến x và y
 
     # Lập phương trình từ dữ liệu bài toán
-    phuong_trinh_can_tinh = (
-        dulieu["thuc_don"][0]["gia"] * x + dulieu["thuc_don"][1]["gia"] * y
-    )  # phương trình cần để tính toán doanh thu
     phuong_trinh = {
         "phuong_trinh": [  # các bất phương trình điều kiện (vế trái <= vế phải)
             {
@@ -141,18 +138,12 @@ def bai_hai_an(dulieu):
 
                 if pt["ve_trai"] == 0:
                     continue
-
-                if (
-                    x_val * pt["ve_trai"].args[0].args[0]
-                    if str(pt["ve_trai"].args[0]) != "x"
-                    else 1
-                ) + (
-                    y_val * pt["ve_trai"].args[1].args[0]
-                    if str(pt["ve_trai"].args[1]) != "x"
-                    else 1
-                ) > pt[
-                    "ve_phai"
-                ]:
+                # ax + by
+                # x,y -> symbols
+                # coeff(x) -> a, y -> b
+                if (x_val * pt["ve_trai"].coeff(x)) + (
+                    y_val * pt["ve_trai"].coeff(y)
+                ) > pt["ve_phai"]:
                     tong_tien = 0
                     break
 
